@@ -1,0 +1,76 @@
+{
+  "name": "uoyo",
+  "title": "Software Engineer",
+  "bio": "后端开发工程师，专注于 .NET 和 Python 技术栈，拥有丰富的系统架构设计经验。熟练掌握 ASP.NET Core、FastAPI 等后端框架，具备完整的前后端开发能力。擅长领域驱动设计（DDD）、微服务架构以及 AI 应用集成。",
+  "email": "344481481@qq.com",
+  "github": "https://github.com/uoyoCsharp",
+  "stacks": [
+    ".NET",
+    "Python",
+    "TypeScript",
+    "ASP.NET Core",
+    "WPF",
+    "Blazor",
+    "FastAPI",
+    "Vue.js",
+    "React",
+    "shadcn/ui",
+    "Ant Design",
+    "Tailwind CSS",
+    "Docker",
+    "AWS",
+    "Azure",
+    "Azure DevOps",
+    "Claude",
+    "Github Copilot",
+    "Redis",
+    "MongoDB",
+    "SQL Server",
+    "PostgreSQL"
+  ],
+  "projects": [
+    {
+      "title": "MiCake",
+      "year": "2024",
+      "description": "基于ASP.NET Core的DDD模块化开发框架，提供高效的开发体验和灵活的架构设计，助力开发者快速构建可维护的应用程序。",
+      "tags": [".NET", "DDD", "ASP.NET Core"],
+      "prod_url": "https://micake.github.io",
+      "github_url": "https://github.com/MiCake/MiCake"
+    },
+    {
+      "title": "Mirrophant",
+      "year": "2024",
+      "description": "由AI驱动的风格创作平台",
+      "tags": ["React", "AI", "Python", "ASP.NET Core"],
+      "prod_url": "https://mirrophant.com"
+    },
+    {
+      "title": "股神鸟鸟",
+      "year": "2023",
+      "description": "A股智能选股工具，基于AI技术分析市场趋势，提供个性化投资建议，助力投资者做出明智决策。",
+      "tags": ["Vue.js", "Tailwind CSS", "ASP.NET Core"],
+      "prod_url": "https://stock.uoyo.net"
+    },
+    {
+      "title": "uniapp-fast-ts-template",
+      "year": "2023",
+      "description": "基于uniapp和TypeScript的快速开发模板，提供丰富的组件和工具，帮助开发者高效构建跨平台应用。",
+      "tags": ["uniapp", "TypeScript"],
+      "github_url": "https://github.com/uoyoCsharp/uniapp-fast-ts-template"
+    }
+  ],
+  "certifications": [
+    {
+      "title": "系统架构设计师",
+      "year": "2019"
+    },
+    {
+      "title": "Microsoft Certified: DevOps Engineer Expert",
+      "year": "2021"
+    },
+    {
+      "title": "Microsoft Certified Trainer",
+      "year": "2021"
+    }
+  ]
+}
