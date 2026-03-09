@@ -1,10 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <defs>
-    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#38bdf8;stop-opacity:1" />
-      <stop offset="100%" style="stop-color:#a855f7;stop-opacity:1" />
-    </linearGradient>
-  </defs>
-  <rect width="32" height="32" rx="6" fill="url(#grad)"/>
-  <text x="16" y="22" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="middle">U</text>
-</svg>
+<?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1773063245507" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1756" xmlns:xlink="http://www.w3.org/1999/xlink" width="200" height="200"><path d="M426.624 602.602667a85.418667 85.418667 0 0 1 50.986667-72.149334V112.426667L64 811.946667l362.624-209.344z m119.296-72.149334V112.426667L960 812.736l-363.050667-209.6a85.397333 85.397333 0 0 0-51.029333-72.682667z m-95.722667 137.386667a85.12 85.12 0 0 0 61.568 26.24 85.12 85.12 0 0 0 61.248-25.898667L930.666667 874.666667H91.968l358.229333-206.826667z" fill="#000000" p-id="1757"></path></svg>

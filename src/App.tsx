@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from "react"
-import { Github, Mail, ExternalLink, Terminal, Command, ArrowUpRight } from "lucide-react"
+import { Github, Mail, ExternalLink, Terminal, Command, ArrowUpRight, Award } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
+import { Particles } from "@/components/effects/Particles"
+import { CertPixelCard } from "@/components/effects/PixelCard"
 
 // ============================================================
 // 个人数据源 (严格基于 JSON)
@@ -54,24 +56,6 @@ const STACK_CATEGORIES = {
     color: "orange" as const,
     span: "md:col-span-2 md:row-span-1"
   }
-}
-
-// ============================================================
-// 组件: 网格背景
-// ============================================================
-function GridBackground() {
-  return (
-    <div className="pointer-events-none fixed inset-0 z-0">
-      <svg className="h-full w-full" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
-            <circle cx="32" cy="32" r="0.5" fill="rgba(255,255,255,0.02)" />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-      </svg>
-    </div>
-  )
 }
 
 // ============================================================
@@ -274,7 +258,7 @@ function HeroSection() {
                     {DATA.name}
                   </h1>
                   <p className="text-cyan-400 font-mono text-lg mt-2">
-                    Backend Engineer & System Architect
+                    Software Engineer (AI, Web, Desktop)
                   </p>
                 </div>
 
@@ -299,7 +283,7 @@ function HeroSection() {
 }
 
 // ============================================================
-// 组件: Certifications (Uptime 风格)
+// 组件: Certifications (Pixel Card 风格)
 // ============================================================
 function CertificationsSection() {
   return (
@@ -307,37 +291,19 @@ function CertificationsSection() {
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="flex items-center gap-3 mb-8">
-          <Terminal className="w-4 h-4 text-cyan-400" />
+          <Award className="w-4 h-4 text-cyan-400" />
           <span className="font-mono text-xs text-zinc-500">~/certifications</span>
         </div>
 
-        {/* Cert Cards - Uptime Style */}
+        {/* Pixel Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {DATA.certifications.map((cert, i) => (
-            <div
+            <CertPixelCard
               key={i}
-              className="group bg-zinc-900/50 border border-zinc-800 rounded-lg p-4 hover:border-zinc-700 transition-colors"
-            >
-              <div className="flex items-center gap-3">
-                {/* Status Dot */}
-                <div className="relative">
-                  <span className="flex h-3 w-3">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-                  </span>
-                </div>
-
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  <h3 className="text-sm text-zinc-200 truncate">{cert.title}</h3>
-                </div>
-
-                {/* Date */}
-                <span className="font-mono text-xs text-zinc-600 shrink-0">
-                  {cert.date}
-                </span>
-              </div>
-            </div>
+              title={cert.title}
+              date={cert.date}
+              status="verified"
+            />
           ))}
         </div>
       </div>
@@ -482,7 +448,7 @@ function ProjectsSection() {
                         className="flex items-center gap-1.5 font-mono text-xs text-zinc-500 hover:text-cyan-400 transition-colors"
                       >
                         <ExternalLink className="w-3.5 h-3.5" />
-                        <span>Live Demo</span>
+                        <span>Live</span>
                       </a>
                     )}
                     {project.github_url && (
@@ -547,9 +513,12 @@ function App() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-300 relative">
-      {/* Grid Background */}
-      <GridBackground />
+    <div className="min-h-screen bg-zinc-950 text-zinc-300 relative overflow-hidden">
+      {/* Particles Background */}
+      <Particles
+        quantity={80}
+        color="#22d3ee"
+      />
 
       {/* Navigation */}
       <Navigation onOpenCommand={() => setCommandOpen(true)} />
