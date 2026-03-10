@@ -1,5 +1,6 @@
 import { ReactNode } from "react"
 import { cn } from "@/lib/utils"
+import { ExternalLink } from "lucide-react"
 
 interface PixelCardProps {
   children: ReactNode
@@ -35,11 +36,13 @@ export function PixelCard({ children, className }: PixelCardProps) {
 export function CertPixelCard({
   title,
   date,
-  status = "verified"
+  status = "verified",
+  link
 }: {
   title: string
   date: string
   status?: "verified" | "pending" | "expired"
+  link?: string
 }) {
   const statusConfig = {
     verified: { dotColor: "bg-emerald-500", label: "VERIFIED", animate: true },
@@ -49,18 +52,8 @@ export function CertPixelCard({
 
   const config = statusConfig[status]
 
-  return (
-    <div
-      className={cn(
-        "relative p-5 rounded-lg overflow-hidden",
-        "bg-zinc-900/70 backdrop-blur-sm",
-        "border border-zinc-800",
-        "hover:border-emerald-500/40",
-        "transition-all duration-300",
-        "hover:shadow-[0_0_25px_rgba(16,185,129,0.15)]",
-        "group"
-      )}
-    >
+  const CardContent = (
+    <>
       {/* Pixel corner decorations */}
       <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-emerald-500/60 transition-all group-hover:border-emerald-400" />
       <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-emerald-500/60 transition-all group-hover:border-emerald-400" />
@@ -90,9 +83,19 @@ export function CertPixelCard({
             <span className={cn("relative inline-flex h-2.5 w-2.5 rounded-full", config.dotColor)} />
           </div>
 
-          <h3 className="text-base font-medium text-zinc-100 group-hover:text-white transition-colors leading-snug">
-            {title}
-          </h3>
+          <div className="flex-1">
+            <h3 className="text-base font-medium text-zinc-100 group-hover:text-white transition-colors leading-snug">
+              {title}
+            </h3>
+          </div>
+
+          {/* Link badge */}
+          {link && (
+            <span className="flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 shrink-0 group-hover:bg-cyan-500/20 transition-colors">
+              <ExternalLink className="w-3 h-3" />
+              <span>View</span>
+            </span>
+          )}
         </div>
 
         {/* Date - 不醒目 */}
@@ -100,6 +103,44 @@ export function CertPixelCard({
           <span className="font-mono text-xs text-zinc-600">{date}</span>
         </div>
       </div>
+    </>
+  )
+
+  // If there's a link, wrap in anchor tag
+  if (link) {
+    return (
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          "relative p-5 rounded-lg overflow-hidden block",
+          "bg-zinc-900/70 backdrop-blur-sm",
+          "border border-zinc-800",
+          "hover:border-cyan-500/40",
+          "transition-all duration-300",
+          "hover:shadow-[0_0_25px_rgba(6,182,212,0.15)]",
+          "group cursor-pointer"
+        )}
+      >
+        {CardContent}
+      </a>
+    )
+  }
+
+  return (
+    <div
+      className={cn(
+        "relative p-5 rounded-lg overflow-hidden",
+        "bg-zinc-900/70 backdrop-blur-sm",
+        "border border-zinc-800",
+        "hover:border-emerald-500/40",
+        "transition-all duration-300",
+        "hover:shadow-[0_0_25px_rgba(16,185,129,0.15)]",
+        "group"
+      )}
+    >
+      {CardContent}
     </div>
   )
 }

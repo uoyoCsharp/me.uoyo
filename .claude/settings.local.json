@@ -18,7 +18,11 @@
       "Bash(npm install:*)",
       "Bash(vercel link:*)",
       "Bash(vercel inspect:*)",
-      "Bash(rm:*)"
+      "Bash(rm:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(grep:*)",
+      "Bash(pnpm add:*)",
+      "WebFetch(domain:fonts.google.com)"
     ]
   }
 }
