@@ -22,7 +22,10 @@
       "WebFetch(domain:raw.githubusercontent.com)",
       "Bash(grep:*)",
       "Bash(pnpm add:*)",
-      "WebFetch(domain:fonts.google.com)"
+      "WebFetch(domain:fonts.google.com)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)",
+      "Bash(vercel ls:*)"
     ]
   }
 }

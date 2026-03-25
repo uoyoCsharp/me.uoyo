@@ -1,0 +1,29 @@
+﻿project:
+  name: "me-uoyo"
+  type: "frontend"
+  pattern: "frontend-react"
+  description: "Personal website / portfolio"
+
+tech_stack:
+  language: "TypeScript"
+  framework: "React 18"
+  build_tool: "Vite"
+  styling: "Tailwind CSS"
+  ui_libraries: "Radix UI, Framer Motion, Lucide React"
+
+architecture:
+  pattern: "frontend-react"
+  directories:
+    src/components: "UI Components"
+    src/sections: "Page Sections"
+    src/lib: "Utilities"
+    src/i18n: "Internationalization"
+
+requirements:
+  active_features:
+    - "Dark theme and color system"
+    - "Hero section layout revision"
+    - "Interactive project cards"
+    - "Skill visualizations"
+    - "Micro-interactions & animations"
+    - "Interactive terminal easter egg"
